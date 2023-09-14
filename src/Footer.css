@@ -1,0 +1,13 @@
+.container-footer{
+    width: 100vw;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container-footer div{
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}

@@ -1,0 +1,14 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar-thumb{
+  background-color: #FFBC00;
+}
+::selection{
+  background-color: #FFBC00;
+  color: #000;
+}
