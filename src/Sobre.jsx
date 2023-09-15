@@ -38,7 +38,7 @@ function Sobre() {
               <p>Guilherme Nobre Bernardo</p>
             </div>
             <div className="integrante">
-              <img src="" alt="" />
+              <img src="../public/silvia.png" alt="" />
               <p>Silvia Kavabata</p>
             </div>
           </div>
