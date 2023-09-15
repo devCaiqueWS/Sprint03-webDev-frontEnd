@@ -19,20 +19,28 @@ function Sobre() {
               sustentável.
             </p>
           </div>
-            <h2>Integrantes</h2>
+          <h2>Integrantes</h2>
           <div className="integrantes">
-            <div className="integrante"></div>
-            <div className="integrante"></div>
-            <div className="integrante"></div>
-            <div className="integrante"></div>
-            <div className="integrante"></div>
-          </div>
-          <div id="nomes">
-            <p>Caíque Walter Silva</p>
-            <p>Enricco Rossi</p>
-            <p>Gabriel Marquez Trevisan</p>
-            <p>Guilherme Nobre Bernardo</p>
-            <p>Silvia Kavabata</p>
+            <div className="integrante">
+              <img src="../public/caique.jpg" alt="" />
+              <p>Caíque Walter Silva</p>
+            </div>
+            <div className="integrante">
+              <img src="" alt="" />
+              <p>Enricco Rossi</p>
+            </div>
+            <div className="integrante">
+              <img src="" alt="" />
+              <p>Gabriel Marquez Trevisan</p>
+            </div>
+            <div className="integrante">
+              <img src="../public/guilherme.jpg" alt="" />
+              <p>Guilherme Nobre Bernardo</p>
+            </div>
+            <div className="integrante">
+              <img src="" alt="" />
+              <p>Silvia Kavabata</p>
+            </div>
           </div>
         </div>
         <div id="content2">

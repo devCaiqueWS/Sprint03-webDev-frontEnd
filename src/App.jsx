@@ -5,6 +5,7 @@ import Nav from "./Nav";
 import Home from "./Home";
 import Footer from "./Footer";
 import Sobre from "./Sobre";
+import Projeto from "./Projeto";
 
 function App() {
   return (
@@ -13,8 +14,8 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Sobre" element={<Sobre/>}></Route>
-          <Route path="/" element={<Home />} />
+          <Route path="/Sobre" element={<Sobre/>} />
+          <Route path="/Projeto" element={<Projeto />} />
           <Route path="/" element={<Home />} />
           <Route path="/" element={<Home />} />
         </Routes>

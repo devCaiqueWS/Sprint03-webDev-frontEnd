@@ -4,7 +4,7 @@ header{
     padding: 20px;
     width: 100vw;
     background-color: #fff;
-    box-shadow: 0 5px 63px -23px rgba(0, 0, 0, 0.75);
+    box-shadow: 0 0.5px 63px -23px rgba(0, 0, 0, 0.5);
 }
 nav{
     display: flex;

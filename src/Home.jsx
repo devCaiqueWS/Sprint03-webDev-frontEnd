@@ -36,7 +36,7 @@ function Home() {
           </form>
         </div>
         <div id="info">
-          <div class="info-item">
+          <div className="info-item">
             <h2>Enchentes em São Paulo</h2>
             <p>
               O problema das enchentes em São Paulo é causado por diversos
@@ -47,7 +47,7 @@ function Home() {
               problema de forma definitiva.
             </p>
           </div>
-          <div class="info-item">
+          <div className="info-item">
             <h2>Problemas</h2>
             <p>
               As enchentes afetam diversas áreas em São Paulo, levando a
