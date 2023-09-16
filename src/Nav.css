@@ -42,7 +42,7 @@ nav a:hover{
     color: #FFBC00;
     border-bottom: 2px solid #FFBC00;
 }
-.black-link:hover{
+.login-btn-style a:hover {
     color: #000;
     border-bottom: 2px solid #000;
-}
+  }

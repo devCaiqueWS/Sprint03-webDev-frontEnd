@@ -1,19 +1,46 @@
-import React from 'react';
+import React from "react";
+import "./Contato.css";
 
 function Contato() {
   return (
     <>
-    <div id="container-contato">
-        <h1>Contato</h1>
+      <div id="container-contato">
         <div id="form-ctt">
-            <h3>Nome</h3>
-            <input type="text" placeholder='Digite seu nome aqui'/>
-            <h3>E-mail</h3>
-            <input type="text" placeholder='Digite seu e-mail aqui'/>
-            <h3>Mensagem</h3>
-            <textarea name="" id="" cols="30" rows="10" placeholder='Digite a mensagem que deseja nos enviar aqui'></textarea>
+          <h1>Contato</h1>
+          <form>
+            <h2>Nome</h2>
+            <input type="text" placeholder="Digite seu nome aqui" />
+            <h2>E-mail</h2>
+            <input type="text" placeholder="Digite seu e-mail aqui" />
+            <h2>Mensagem</h2>
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Digite a mensagem que deseja nos enviar aqui"
+            ></textarea>
+            <button type="submit">Enviar</button>
+          </form>
         </div>
-    </div>
+        <div id="info-ctt">
+          <h1>informações</h1>
+            <h2>E-mail</h2>
+          <div className="info-ctt-item">
+            <img src="./public/email.png" alt="" />
+            <p>contato@desktops.com.br</p>
+          </div>
+            <h2>telefone</h2>
+          <div className="info-ctt-item">
+            <img src="./public/telefone.png" alt="" />
+            <p>+55 (11) 4000-7007</p>
+          </div>
+        </div>
+        <div id="content2">
+          <h2>Sua região está alagada?</h2>
+          <button>Descubra aqui</button>
+        </div>
+      </div>
     </>
   );
 }
