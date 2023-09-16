@@ -19,18 +19,18 @@ function Sobre() {
               sustentável.
             </p>
           </div>
-          <h2>Integrantes</h2>
+          <h1>Integrantes</h1>
           <div className="integrantes">
             <div className="integrante">
               <img src="../public/caique.jpg" alt="" />
               <p>Caíque Walter Silva</p>
             </div>
             <div className="integrante">
-              <img src="" alt="" />
+              <img src="../public/enrico.png" alt="" />
               <p>Enricco Rossi</p>
             </div>
             <div className="integrante">
-              <img src="" alt="" />
+              <img src="../public/gabriel.png" alt="" />
               <p>Gabriel Marquez Trevisan</p>
             </div>
             <div className="integrante">

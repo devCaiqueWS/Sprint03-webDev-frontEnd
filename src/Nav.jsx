@@ -1,8 +1,9 @@
 import {} from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import "./Nav.css";
 
 function Nav() {
+  const location = useLocation();
   return (
     <>
       <header>
@@ -12,7 +13,9 @@ function Nav() {
           <NavLink to="/Sobre">Sobre Nós</NavLink>
           <NavLink to="/Projeto">Projeto</NavLink>
           <NavLink to="/Contato">Contato</NavLink>
-          <NavLink to="/Login">Login</NavLink>
+          <div className="login-btn-style">
+          <NavLink to="/Login" className={location.pathname === "/Login" ? "black-link" : ""}>Login</NavLink>
+          </div>
         </nav>
       </header>
     </>

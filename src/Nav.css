@@ -1,3 +1,9 @@
+.active{
+    border-bottom: 2px solid #FFBC00;
+}
+.black-link{
+    border-bottom-color: #000;
+}
 header{
     display: flex;
     justify-content: space-around;
@@ -19,7 +25,24 @@ nav a{
     color: #000;
     font-size: 18px;
 }
+.login-btn-style{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFBC00;
+    height: 175%;
+    width: 100px;
+    
+}
+.active:hover{
+    color: #000;
+    text-decoration: none;
+}
 nav a:hover{
     color: #FFBC00;
-    text-decoration: underline;
+    border-bottom: 2px solid #FFBC00;
+}
+.black-link:hover{
+    color: #000;
+    border-bottom: 2px solid #000;
 }

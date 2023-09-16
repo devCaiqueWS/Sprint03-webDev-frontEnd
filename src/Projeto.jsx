@@ -1,5 +1,6 @@
 import {} from "react";
 import "./Projeto.css";
+import MapaGoogle from "./MapaGoogle";
 
 function Projeto() {
   return (
@@ -9,14 +10,13 @@ function Projeto() {
         <h2>informe o endereço da área desejada</h2>
         <div id="mapa">
           <div className="busca">
-            <input type="text" placeholder="Digite o endereço aqui"/>
+            <input type="text" placeholder="Digite o endereço aqui" />
             <button type="Submit">Enviar</button>
           </div>
-          <img src="" alt="" />
-          <div id="resultados">
-          
+          <MapaGoogle />
+          <div id="resultados">            
+          </div>
         </div>
-        </div>        
       </div>
     </>
   );

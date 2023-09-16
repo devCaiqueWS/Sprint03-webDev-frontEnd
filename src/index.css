@@ -5,10 +5,7 @@
 body{
   overflow-x: hidden;
 }
-body::-webkit-scrollbar-thumb{
-  background-color: #FFBC00;
-}
 ::selection{
-  background-color: #c704f8;
+  background-color: #3F46BF;
   color: #000;
 }

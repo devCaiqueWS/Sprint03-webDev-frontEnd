@@ -1,5 +1,6 @@
 import {} from "react";
 import "./Home.css";
+import Login from "./Login";
 
 function Home() {
   return (
@@ -15,26 +16,7 @@ function Home() {
             <button className="btn">Descubra aqui</button>
           </div>
         </div>
-        <div id="form-login">
-          <h1>FAÇA LOGIN</h1>
-          <form action="">
-            <div>
-              <label htmlFor="nome">Nome de usuário</label>
-              <br />
-              <input type="text" id="nome" placeholder="Digite seu nome aqui" />
-            </div>
-            <div>
-              <label htmlFor="senha">Senha</label>
-              <br />
-              <input
-                type="password"
-                id="senha"
-                placeholder="Digite sua senha aqui"
-              />
-            </div>
-            <button type="submit">Enviar</button>
-          </form>
-        </div>
+        <Login />
         <div id="info">
           <div className="info-item">
             <h2>Enchentes em São Paulo</h2>
