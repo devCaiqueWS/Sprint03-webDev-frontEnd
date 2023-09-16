@@ -12,25 +12,33 @@
     margin-bottom: 60px;
 }
 .integrantes {
-    font-size: 0;
+    display: flex;    
+    justify-content: center;
+    align-items: end;
+    margin-left: -40px;
 }
   
 .integrante {
-    display: inline-block;
-    width: 230px;
-    height: 230px;
+    display: flex;
+    flex-direction: column;
+    width: 17.5vw;
+    height: 25vh;
     background-color: #FFBC00;
     margin-top: 60px;
     margin-right: 20px;
-    vertical-align: middle;
-    border-radius: 15px;
+    border-radius: 15px;        
+    justify-content: space-evenly;
+    align-items: center;
 }
-#nomes{
-    margin: 10px 10px 10px 40px;
+.integrante img{
+    display: block;
+    width: auto;
+    height: auto;
+    border-radius: 50%;
 }
-#nomes p{
-    display: inline-block;
-    margin-right: 110px;
+.integrantes p{
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
 }
 #content2{
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.027)), url(/public/rodapé.png);

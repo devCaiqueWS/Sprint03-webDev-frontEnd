@@ -9,10 +9,10 @@ function Nav() {
         <img src="./public//logo-alerta-enchente.png" alt="logo" />
         <nav>
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/">Sobre Nós</NavLink>
-          <NavLink to="/">Projeto</NavLink>
-          <NavLink to="/">Contato</NavLink>
-          <NavLink to="/">Login</NavLink>
+          <NavLink to="/Sobre">Sobre Nós</NavLink>
+          <NavLink to="/Projeto">Projeto</NavLink>
+          <NavLink to="/Contato">Contato</NavLink>
+          <NavLink to="/Login">Login</NavLink>
         </nav>
       </header>
     </>
