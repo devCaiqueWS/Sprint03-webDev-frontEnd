@@ -5,11 +5,11 @@ import MapaGoogle from "./MapaGoogle";
 function Projeto() {
   const [inputValue, setInputValue] = useState("");
   const [resultado, setResultado] = useState("");
-  const [valorAleatorio1, setValorAleatorio1] = useState(null);
-  const [valorAleatorio2, setValorAleatorio2] = useState(null);
+  const [fluxo, setFluxo] = useState(null);
+  const [nivel, setNivel] = useState(null);
   const [pageHeightClass, setPageHeightClass] = useState("");
-  const [riscoEnchente, setRiscoEnchente] = useState(""); // Estado para o texto de risco de enchente
-  const [corBolinha, setCorBolinha] = useState(""); // Estado para a cor da bolinha
+  const [riscoEnchente, setRiscoEnchente] = useState("");
+  const [corBolinha, setCorBolinha] = useState("");
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -22,28 +22,37 @@ function Projeto() {
     gerarValoresAleatorios();
     verificarRiscoEnchente();
     setPageHeightClass("extended-height");
+
+    sessionStorage.setItem("resultado", resultado);
+    sessionStorage.setItem("fluxo", fluxo);
+    sessionStorage.setItem("nivel", nivel);
+    sessionStorage.setItem("riscoEnchente", riscoEnchente);
+    sessionStorage.setItem("corBolinha", corBolinha);
   };
 
   const gerarValoresAleatorios = () => {
-    const valor1 = Math.floor(Math.random() * (300 - 50 + 1)) + 50;
-    const valor2 = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
-    setValorAleatorio1(valor1);
-    setValorAleatorio2(valor2);
+    const novoFluxo = Math.floor(Math.random() * (300 - 50 + 1)) + 50;
+    const novoNivel = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+    setFluxo(novoFluxo);
+    setNivel(novoNivel);
   };
 
   const verificarRiscoEnchente = () => {
-    const resultadoMultiplicacao = valorAleatorio1 * valorAleatorio2;
+    const resultadoMultiplicacao = fluxo * nivel;
+    let novaCorBolinha = "";
 
-    if (resultadoMultiplicacao < 400) {
+    if (resultadoMultiplicacao < 500) {
       setRiscoEnchente("Sem risco de enchente");
-      setCorBolinha("verde");
+      novaCorBolinha = "verde";
     } else if (resultadoMultiplicacao < 1000) {
       setRiscoEnchente("Risco de enchente: Chamar suporte para verificar local");
-      setCorBolinha("amarela");
+      novaCorBolinha = "amarela";
     } else {
       setRiscoEnchente("Possível enchente: Chamar equipe para diminuir danos");
-      setCorBolinha("vermelha");
+      novaCorBolinha = "vermelha";
     }
+
+    setCorBolinha(novaCorBolinha);
   };
 
   return (
@@ -72,9 +81,9 @@ function Projeto() {
                 <div className={`bolinha ${corBolinha}`}></div>
                 <p>{riscoEnchente}</p><br />
                 <p>Fluxo de água:</p>
-                <p>{valorAleatorio1} rpm</p><br />
+                <p>{fluxo} rpm</p><br />
                 <p>Nível de água:</p>
-                <p>{valorAleatorio2}</p>
+                <p>{nivel}</p>
               </>
             )}
           </div>
