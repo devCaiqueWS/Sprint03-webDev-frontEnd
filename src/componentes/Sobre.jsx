@@ -6,6 +6,7 @@ import enricoImage from "../assets/enrico.png";
 import gabrielImage from "../assets/gabriel.png";
 import guilhermeImage from "../assets/guilherme.jpg";
 import silviaImage from "../assets/silvia.png";
+import "../mediaQuery/Sobre-media.css"
 
 function Sobre() {
   return (
@@ -27,7 +28,7 @@ function Sobre() {
             <div className="integrante">
               <img src={caiqueImage} alt="" /> 
 
-              <p>Caíque Walter Silva</p>
+              <p>Caíque Walter</p>
             </div>
             <div className="integrante">
               <img src={enricoImage} alt="" /> 
@@ -37,12 +38,12 @@ function Sobre() {
             <div className="integrante">
               <img src={gabrielImage} alt="" /> 
 
-              <p>Gabriel Marquez Trevisan</p>
+              <p>Gabriel Marquez</p>
             </div>
             <div className="integrante">
               <img src={guilhermeImage} alt="" /> 
 
-              <p>Guilherme Nobre Bernardo</p>
+              <p>Guilherme Nobre</p>
             </div>
             <div className="integrante">
               <img src={silviaImage} alt="" />

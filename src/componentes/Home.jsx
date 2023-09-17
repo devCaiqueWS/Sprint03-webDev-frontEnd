@@ -1,6 +1,7 @@
 import {} from "react";
 import "../css/Home.css";
 import Login from "./Login";
+import "../mediaQuery/Home-media.css"
 
 function Home() {
   return (

@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/logo-alerta-enchente.png";
 import "../css/Nav.css";
+import "../mediaQuery/Nav-media.css"
 
 function Nav() {
   const location = useLocation();
@@ -21,6 +22,7 @@ function Nav() {
             >
               Login
             </NavLink>
+            
           </div>
         </nav>
       </header>

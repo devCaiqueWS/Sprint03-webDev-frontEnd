@@ -1,3 +1,4 @@
+
 .active{
     border-bottom: 2px solid #FFBC00;
 }
@@ -10,7 +11,10 @@ header{
     padding: 20px;
     width: 100vw;
     background-color: #fff;
-    box-shadow: 0 0.5px 63px -23px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0.5px 63px -23px rgba(0, 0, 0, 0.836);
+}
+header img{
+    width: 15%;
 }
 nav{
     display: flex;
@@ -18,7 +22,6 @@ nav{
     align-items: center;
     width: 100vw;
     font-family: Arial, Helvetica, sans-serif;
-    /* font-weight: bold; */
 }
 nav a{
     text-decoration: none ;
