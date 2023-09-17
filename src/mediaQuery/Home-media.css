@@ -1,0 +1,10 @@
+@media (max-width: 891px) {
+    #info h2{
+        font-size: 99%;
+    }
+  }
+  @media (max-width: 755px) {
+    #info h2{
+        font-size: 80%;
+    }
+  }

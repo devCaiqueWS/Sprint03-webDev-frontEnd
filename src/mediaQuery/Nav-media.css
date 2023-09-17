@@ -1,0 +1,10 @@
+@media (max-width: 891px) {
+    nav a{
+        font-size: 99%;
+    }
+  }
+  @media (max-width: 755px) {
+    nav a{
+        font-size: 80%;
+    }
+  }
