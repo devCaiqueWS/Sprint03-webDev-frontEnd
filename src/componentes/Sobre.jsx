@@ -6,7 +6,6 @@ import enricoImage from "../assets/enrico.png";
 import gabrielImage from "../assets/gabriel.png";
 import guilhermeImage from "../assets/guilherme.jpg";
 import silviaImage from "../assets/silvia.png";
-import "../mediaQuery/Sobre-media.css"
 
 function Sobre() {
   return (
