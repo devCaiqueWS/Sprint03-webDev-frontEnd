@@ -1,5 +1,7 @@
 import React from "react";
 import "./Contato.css";
+import emailImage from "../public/email.png";
+import telefoneImage from "../public/telefone.png";
 
 function Contato() {
   return (
@@ -25,14 +27,14 @@ function Contato() {
         </div>
         <div id="info-ctt">
           <h1>informações</h1>
-            <h2>E-mail</h2>
+          <h2>E-mail</h2>
           <div className="info-ctt-item">
-            <img src="./public/email.png" alt="" />
+            <img src={emailImage} alt="" />
             <p>contato@desktops.com.br</p>
           </div>
-            <h2>telefone</h2>
+          <h2>telefone</h2>
           <div className="info-ctt-item">
-            <img src="./public/telefone.png" alt="" />
+            <img src={telefoneImage} alt="" />
             <p>+55 (11) 4000-7007</p>
           </div>
         </div>

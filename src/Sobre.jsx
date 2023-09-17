@@ -1,5 +1,11 @@
-import {} from "react";
+import React from "react";
 import "./Sobre.css";
+import logoDesktops from "../public/logo-desktops-amarelo.png";
+import caiqueImage from "../public/caique.jpg";
+import enricoImage from "../public/enrico.png";
+import gabrielImage from "../public/gabriel.png";
+import guilhermeImage from "../public/guilherme.jpg";
+import silviaImage from "../public/silvia.png";
 
 function Sobre() {
   return (
@@ -7,10 +13,7 @@ function Sobre() {
       <div id="container-sobre">
         <div id="content1">
           <div id="top">
-            <img
-              src="./public/logo-desktops-amarelo.png"
-              alt="Logo Desk{tops}"
-            />
+            <img src={logoDesktops} alt="Logo Desk{tops}" /> 
             <p>
               DeskTOPS é um grupo dedicado a desenvolver soluções tecnológicas
               que visam proteger e melhorar a qualidade de vida das pessoas, ao
@@ -22,23 +25,28 @@ function Sobre() {
           <h1>Integrantes</h1>
           <div className="integrantes">
             <div className="integrante">
-              <img src="../public/caique.jpg" alt="" />
+              <img src={caiqueImage} alt="" /> 
+
               <p>Caíque Walter Silva</p>
             </div>
             <div className="integrante">
-              <img src="../public/enrico.png" alt="" />
+              <img src={enricoImage} alt="" /> 
+
               <p>Enricco Rossi</p>
             </div>
             <div className="integrante">
-              <img src="../public/gabriel.png" alt="" />
+              <img src={gabrielImage} alt="" /> 
+
               <p>Gabriel Marquez Trevisan</p>
             </div>
             <div className="integrante">
-              <img src="../public/guilherme.jpg" alt="" />
+              <img src={guilhermeImage} alt="" /> 
+
               <p>Guilherme Nobre Bernardo</p>
             </div>
             <div className="integrante">
-              <img src="../public/silvia.png" alt="" />
+              <img src={silviaImage} alt="" />
+
               <p>Silvia Kavabata</p>
             </div>
           </div>
@@ -51,4 +59,5 @@ function Sobre() {
     </>
   );
 }
+
 export default Sobre;

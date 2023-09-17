@@ -1,5 +1,6 @@
-import {} from "react";
+import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import logo from "../public/logo-alerta-enchente.png";
 import "./Nav.css";
 
 function Nav() {
@@ -7,18 +8,24 @@ function Nav() {
   return (
     <>
       <header>
-        <img src="./public//logo-alerta-enchente.png" alt="logo" />
+        <img src={logo} alt="logo" />
         <nav>
           <NavLink to="/">Home</NavLink>
           <NavLink to="/Sobre">Sobre Nós</NavLink>
           <NavLink to="/Projeto">Projeto</NavLink>
           <NavLink to="/Contato">Contato</NavLink>
           <div className="login-btn-style">
-          <NavLink to="/Login" className={location.pathname === "/Login" ? "black-link" : ""}>Login</NavLink>
+            <NavLink
+              to="/Login"
+              className={location.pathname === "/Login" ? "black-link" : ""}
+            >
+              Login
+            </NavLink>
           </div>
         </nav>
       </header>
     </>
   );
 }
+
 export default Nav;
