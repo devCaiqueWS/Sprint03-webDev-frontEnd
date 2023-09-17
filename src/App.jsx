@@ -1,13 +1,13 @@
 import {} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
-import Nav from "./Nav";
-import Home from "./Home";
-import Footer from "./Footer";
-import Sobre from "./Sobre";
-import Projeto from "./Projeto";
-import Login from "./Login";
-import Contato from "./Contato";
+import "./css/App.css";
+import Nav from "./componentes/Nav";
+import Home from "./componentes/Home";
+import Footer from "./componentes/Footer";
+import Sobre from "./componentes/Sobre";
+import Projeto from "./componentes/Projeto";
+import Login from "./componentes/Login";
+import Contato from "./componentes/Contato";
 
 function App() {
   return (

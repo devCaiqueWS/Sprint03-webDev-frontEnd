@@ -1,11 +1,11 @@
 import React from "react";
-import "./Sobre.css";
-import logoDesktops from "../public/logo-desktops-amarelo.png";
-import caiqueImage from "../public/caique.jpg";
-import enricoImage from "../public/enrico.png";
-import gabrielImage from "../public/gabriel.png";
-import guilhermeImage from "../public/guilherme.jpg";
-import silviaImage from "../public/silvia.png";
+import "../css/Sobre.css";
+import logoDesktops from "../assets/logo-desktops-amarelo.png";
+import caiqueImage from "../assets/caique.jpg";
+import enricoImage from "../assets/enrico.png";
+import gabrielImage from "../assets/gabriel.png";
+import guilhermeImage from "../assets/guilherme.jpg";
+import silviaImage from "../assets/silvia.png";
 
 function Sobre() {
   return (
