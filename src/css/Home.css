@@ -1,5 +1,5 @@
 #background-home{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.027)), url(/public/imagem-carrossel-1.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.027)), url(../assets/imagem-carrossel-1.png);
     background-repeat: no-repeat;
     width: 100vw;
     height: 90vh;

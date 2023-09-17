@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Projeto.css";
+import "../css/Projeto.css";
 import MapaGoogle from "./MapaGoogle";
 
 function Projeto() {

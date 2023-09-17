@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import logo from "../public/logo-alerta-enchente.png";
-import "./Nav.css";
+import logo from "../assets/logo-alerta-enchente.png";
+import "../css/Nav.css";
 
 function Nav() {
   const location = useLocation();

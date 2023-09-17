@@ -1,5 +1,5 @@
 import {} from "react";
-import "./Home.css";
+import "../css/Home.css";
 import Login from "./Login";
 
 function Home() {

@@ -1,6 +1,6 @@
 import {} from 'react'
-import './Footer.css'
-import darkMode from "../public/darkmode.svg";
+import '../css/Footer.css'
+import darkMode from "../assets/darkmode.svg";
 
 function Footer(){
   return(

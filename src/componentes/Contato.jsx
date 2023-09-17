@@ -1,7 +1,7 @@
 import React from "react";
-import "./Contato.css";
-import emailImage from "../public/email.png";
-import telefoneImage from "../public/telefone.png";
+import "../css/Contato.css";
+import emailImage from "../assets/email.png";
+import telefoneImage from "../assets/telefone.png";
 
 function Contato() {
   return (
