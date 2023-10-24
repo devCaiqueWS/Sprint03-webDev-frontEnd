@@ -1,0 +1,22 @@
+@media (max-width: 1200px) {
+    .integrantes {
+      grid-template-columns: repeat(4, 1fr); /* 4 colunas em telas menores que 1200px */
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .integrantes {
+      grid-template-columns: repeat(3, 1fr); /* 3 colunas em telas menores que 900px */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .integrantes {
+      grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores que 600px */
+    }
+  }
+  @media (max-width: 500px) {
+    .integrantes {
+      grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores que 600px */
+    }
+  }

@@ -30,17 +30,16 @@
     text-decoration: none;
     font-size: 2rem;
     flex-grow: 1;
-  
     display: flex;
     align-items: center;
     justify-items: center;
-  }
   
-  .nav-logo .icon {
-    display: inline-block;
-    width: 3rem;
-    height: 3rem;
-    margin-left: 16px;
+    .icon {
+      display: inline-block;
+      width: 3rem;
+      height: 3rem;
+      margin-left: 16px;
+    }
   }
   
   .nav-menu {
@@ -62,42 +61,35 @@
   .nav-item {
     line-height: 40px;
     margin-right: 1rem;
-  }
   
-  .nav-item:after {
-    content: "";
-    display: block;
-    height: 3px;
-    width: 0;
-    background: transparent;
-    transition: width 0.7s ease, background-color 0.5s ease;
-  }
+    &:after {
+      content: "";
+      display: block;
+      height: 3px;
+      width: 0;
+      background: transparent;
+      transition: width 0.7s ease, background-color 0.5s ease;
+    }
   
-  .nav-item:hover:after {
-    width: 100%;
-    background: #ffdd40;
-  }
+    &:hover:after {
+      width: 100%;
+      background: #ffdd40;
+    }
   
-  .nav-item .active {
-    color: #ffdd40;
-    border: 2px solid #ffdd40;
+    &.active {
+      color: #ffdd40;
+      border: 2px solid #ffdd40;
+    }
   }
   
   .nav-icon {
     display: none;
     color: #f5b921;
+  
+    .icon {
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+    }
   }
   
-  .nav-icon .icon {
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-  }
-nav ul li a{
-  color: #000;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  height: 100%;
-  border-bottom: 3px solid transparent;
-  font-family: Arial, Helvetica, sans-serif;
-}

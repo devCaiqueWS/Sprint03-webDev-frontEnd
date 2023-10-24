@@ -1,33 +1,91 @@
-import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
-import logo from "../assets/logo-alerta-enchente.png";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import "../css/Nav.css";
-import "../mediaQuery/Nav-media.css"
+import "../mediaQuery/Nav-media.css";
+import logo from "../assets/logo-alerta-enchente.png";
+import { HamburgetMenuClose, HamburgetMenuOpen } from "./Icons";
 
-function Nav() {
-  const location = useLocation();
+function NavBar() {
+  const [click, setClick] = useState(false);
+
+  const handleClick = () => setClick(!click);
   return (
     <>
-      <header>
-        <img src={logo} alt="logo" />
-        <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/Sobre">Sobre Nós</NavLink>
-          <NavLink to="/Projeto">Projeto</NavLink>
-          <NavLink to="/Contato">Contato</NavLink>
-          <div className="login-btn-style">
-            <NavLink
-              to="/Login"
-              className={location.pathname === "/Login" ? "black-link" : ""}
-            >
-              Login
-            </NavLink>
-            
+      <nav className="navbar">
+        <div className="nav-container">
+          <NavLink exact to="/" className="nav-logo">
+            <img src={logo} alt="logo" />
+          </NavLink>
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/sobre"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Sobre
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/projeto"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Projeto
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/contato"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Contato
+              </NavLink>
+            </li>
+            <li className="nav-item">
+                <NavLink
+                  to="/Login"
+                  className={location.pathname === "/Login" ? "black-link" : ""}
+                >
+                  Login
+                </NavLink>
+            </li>
+          </ul>
+          <div className="nav-icon" onClick={handleClick}>
+
+            {click ? (
+              <span className="icon">
+                <HamburgetMenuClose />{" "}
+              </span>
+            ) : (
+              <span className="icon">
+                <HamburgetMenuOpen />
+              </span>
+            )}
           </div>
-        </nav>
-      </header>
+        </div>
+      </nav>
     </>
   );
 }
 
-export default Nav;
+export default NavBar;

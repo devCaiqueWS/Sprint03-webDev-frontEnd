@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/Sobre.css";
+import "../mediaQuery/Sobre-media-query.css";
 import logoDesktops from "../assets/logo-desktops-amarelo.png";
 import caiqueImage from "../assets/caique.jpg";
 import enricoImage from "../assets/enrico.png";
