@@ -1,64 +1,86 @@
-#container-sobre h1{
+#container-sobre {
+    display: grid;
+    grid-template-areas:
+      "title"
+      "content1"
+      "integrantes"
+      "content2";
+    grid-template-columns: 1fr; /* Uma coluna */
+    grid-template-rows: auto auto auto 1fr; /* Quatro linhas (a última preencherá o espaço restante) */
+    max-height: 100vh;
+  }
+  
+  #container-sobre h1 {
+    grid-area: title;
     border-bottom: 2px solid #FFBC00;
     width: max-content;
-}
-#content1{
-    width: 100vw;
-    height: 100vh;
+  }
+  
+  #content1 {
+    grid-area: content1;
     padding: 30px;
     font-family: Arial, Helvetica, sans-serif;
-}
-#content1 img{
-    width: 40%;
-}
-#top{
-    width: 90%;
-    margin-bottom: 60px;
-}
-.integrantes {
-    display: flex;    
-    justify-content: center;
-    align-items: end;
-    margin-left: -40px;
-}
-  
-.integrante {
     display: flex;
     flex-direction: column;
-    width: 17.5vw;
-    height: 25vh;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  #content1 img {
+    width: 40%;
+  }
+  
+  .integrantes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: start;
+  }
+  
+  .integrante {
+    width: 100%;
+    height: 20vh;
     background-color: #FFBC00;
-    margin-top: 60px;
-    margin-right: 20px;
-    border-radius: 15px;        
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-}
-.integrante img{
+  }
+  
+  .integrante img {
     display: block;
     width: auto;
     height: auto;
     border-radius: 50%;
-}
-.integrantes p{
+  }
+  
+  .integrantes p {
     color: #000;
     font-family: Arial, Helvetica, sans-serif;
-}
-#content2{
+  }
+  
+  #content2 {
+    grid-area: content2;
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.027)), url(../assets/rodapé.png);
     background-size: cover;
     background-position: center bottom;
     background-repeat: no-repeat;
-    width: 100vw;
-    height: 30vh;
     padding: 20px;
     font-family: Arial, Helvetica, sans-serif;
-}
-#content2 h2{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  #content2 h2 {
     color: #fff;
     margin: 0;
-}
-#content2 button{
+  }
+  
+  #content2 button {
     border-radius: 15px;
     padding: 20px 30px;
     text-transform: uppercase;
@@ -66,4 +88,5 @@
     border: none;
     background-color: #FFBC00;
     margin-top: 20px;
-}
+  }
+  
