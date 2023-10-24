@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/Projeto.css";
+import "../mediaQuery/Projeto-media.css"
 import MapaGoogle from "./MapaGoogle";
 
 function Projeto() {
@@ -59,7 +60,7 @@ function Projeto() {
     <>
       <div id="container-projeto" className={pageHeightClass}>
         <h1>Área de administração</h1>
-        <h2>Informe o endereço da área desejada</h2>
+        <h2>Informe o CEP da área que deseja administrar: </h2>
         <div id="mapa">
           <div className="busca">
             <form onSubmit={handleSubmit}>
@@ -76,14 +77,14 @@ function Projeto() {
           <MapaGoogle />
           <div id="resultados">
             {resultado && (
-              <>
-                <h2>{resultado}</h2>
-                <div className={`bolinha ${corBolinha}`}></div>
-                <p>{riscoEnchente}</p><br />
-                <p>Fluxo de água:</p>
-                <p>{fluxo} rpm</p><br />
-                <p>Nível de água:</p>
-                <p>{nivel}</p>
+              <>              
+                <h2>{resultado}</h2>{/* Mostraremos informações tiradas da API */}
+                <div className={`bolinha ${corBolinha}`}style={{ display: "inline-block" }}></div>
+                <p style={{ display: "inline-block" }}>{riscoEnchente}</p><br /><br />
+                <p style={{ display: "inline-block" }}>Fluxo de água:</p>
+                <p style={{ display: "inline-block" }}>{fluxo} rpm</p><br /><br />
+                <p style={{ display: "inline-block" }}>Nível de água:</p>
+                <p style={{ display: "inline-block" }}>{nivel}</p>
               </>
             )}
           </div>

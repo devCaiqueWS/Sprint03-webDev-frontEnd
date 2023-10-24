@@ -10,6 +10,7 @@
     left: -110%;
     opacity: 1;
     transition: all 0.5s ease;
+    font-weight: bold;
   }
 
   .nav-menu.active {
@@ -23,7 +24,7 @@
     color: #fff;
     border: none;
   }
-  .nav-links {
+  .nav-links, nav ul li a{
     padding: 1.5rem;
     width: 100%;
     display: table;
