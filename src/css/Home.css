@@ -1,3 +1,6 @@
+#container{
+  overflow-x: hidden;
+}
 #background-home{
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0.027)), url(../assets/imagem-carrossel-1.png);
     background-repeat: no-repeat;
@@ -6,6 +9,7 @@
     font-family: Arial, Helvetica, sans-serif;
     padding: 50px;
     z-index: -1;
+
 }
 #background-home h1,#background-home p{
     color: #fff;

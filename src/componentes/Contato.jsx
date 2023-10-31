@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/Contato.css";
+import "../mediaQuery/Contato-media.css";
 import emailImage from "../assets/email.png";
 import telefoneImage from "../assets/telefone.png";
 
@@ -17,7 +18,7 @@ function Contato() {
             <h2>Mensagem</h2>
             <textarea
               name=""
-              id=""
+              id="mnsg"
               cols="30"
               rows="10"
               placeholder="Digite a mensagem que deseja nos enviar aqui"

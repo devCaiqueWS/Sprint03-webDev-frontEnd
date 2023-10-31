@@ -7,7 +7,7 @@
       "content2";
     grid-template-columns: 1fr; /* Uma coluna */
     grid-template-rows: auto auto auto 1fr; /* Quatro linhas (a última preencherá o espaço restante) */
-    max-height: 100vh;
+    max-height: 550vh;
   }
   
   #container-sobre h1 {

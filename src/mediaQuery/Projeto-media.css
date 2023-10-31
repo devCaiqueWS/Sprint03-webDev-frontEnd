@@ -53,5 +53,8 @@
       #resultados h2{
         text-transform: uppercase;
       }
+      iframe{
+        height: 200px;
+      }
 }
 

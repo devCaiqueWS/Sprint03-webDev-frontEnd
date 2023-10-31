@@ -35,7 +35,8 @@
 #info-ctt {
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  margin-top: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .info-ctt-item {
@@ -74,4 +75,8 @@
     border: none;
     background-color: #FFBC00;
     margin-top: 20px;
+}
+#info-ctt h2, #info-ctt h1{
+  text-transform: uppercase;
+  margin-left: 50px;
 }
