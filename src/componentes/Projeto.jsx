@@ -44,7 +44,7 @@ function Projeto() {
           });
   
           const enderecoString = Object.values(endereco).join(", ");
-          setResultado(enderecoString);
+          setResultado(enderecoString, cep);
           gerarValoresAleatorios();
           verificarRiscoEnchente();
         }
@@ -92,6 +92,7 @@ function Projeto() {
                 onChange={handleInputChange}
                 style={{ display: "inline-block" }}
                 maxlength="8"
+                minLength="8"
               />
               <button type="submit" style={{ display: "inline-block" }}>
                 Enviar
@@ -107,10 +108,10 @@ function Projeto() {
                 <p style={{ display: "inline-block" }}>{riscoEnchente}</p>
                 <br /><br />
                 <p style={{ display: "inline-block" }}>Fluxo de água:</p>
-                <p style={{ display: "inline-block" }}>{fluxo} rpm</p>
+                <p style={{ display: "inline-block" }}> {fluxo} rpm</p>
                 <br /><br />
                 <p style={{ display: "inline-block" }}>Nível de água:</p>
-                <p style={{ display: "inline-block" }}>{nivel}</p>
+                <p style={{ display: "inline-block" }}> {nivel}</p>
               </>
             )}
           </div>
