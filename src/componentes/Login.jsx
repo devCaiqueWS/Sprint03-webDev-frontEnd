@@ -1,88 +1,73 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
+import Projeto from './Projeto';
 import '../css/Login.css';
 import '../mediaQuery/Login-media.css';
 
 function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
-  const [messageColor, setMessageColor] = useState('');
-  const [messageBackground, setMessageBackground] = useState('');
+  const user = useRef();
+  const password = useRef();
+  const [loggedIn, setLoggedIn] = useState(false);
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  const getUser = sessionStorage.getItem('userData');
+  const getSenha = sessionStorage.getItem('senhaData');
 
-    const storedUsername = sessionStorage.getItem('nomeDeUsuario');
-    const storedPassword = sessionStorage.getItem('senha');
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    if (username === 'adm@admin.com' && password === 'adm123') {
-      setMessage('Login bem-sucedido como administrador!');
-      setMessageColor('green');
-      setMessageBackground('rgba(0, 128, 0, 0.19)');
-
-      localStorage.setItem('username', username);
-
-      const loginTime = new Date();
-      localStorage.setItem('loginTime', loginTime.toString());
-    } else if (username === storedUsername && password === storedPassword) {
-      setMessage('Login bem-sucedido!');
-      setMessageColor('green');
-      setMessageBackground('rgba(0, 128, 0, 0.19)');
-
-      localStorage.setItem('username', username);
-
-      const loginTime = new Date();
-      localStorage.setItem('loginTime', loginTime.toString());
+    if (user.current.value === 'admin' && password.current.value === '123') {
+      let token =
+        Math.random().toString(16).substring(2) +
+        Math.random().toString(16).substring(2);
+      sessionStorage.setItem('userData', 'admin');
+      sessionStorage.setItem('senhaData', token);
+      setLoggedIn(true);
     } else {
-      setMessage('Credenciais inválidas. Tente novamente.');
-      setMessageColor('red');
-      setMessageBackground('rgba(255, 0, 0, 0.19)');
+      alert('usuário e senha inválidos !!!');
     }
+  };
 
-    setTimeout(() => {
-      setMessage('');
-      setMessageColor('');
-      setMessageBackground('');
-    }, 15000);
-  }
+  const handleLogout = () => {
+    sessionStorage.removeItem('userData');
+    sessionStorage.removeItem('senhaData');
+    setLoggedIn(false);
+  };
 
   return (
     <>
-      <div id="form-login">
-        <h1>FAÇA LOGIN</h1>
-        <div
-          className="mensagem"
-          style={{ color: messageColor, backgroundColor: messageBackground }}
-        >
-          <p>{message}</p>
+      {loggedIn ? (
+        <div>
+          <h1>Bem-vindo, {getUser}!</h1>
+          <button onClick={handleLogout}>Logout</button>
+          <Projeto />
         </div>
-        <br />
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="nome">Nome de usuário</label>
-            <br />
-            <input
-              type="text"
-              id="nome"
-              placeholder="Digite seu nome aqui"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </div>
-          <div>
-            <label htmlFor="senha">Senha</label>
-            <br />
-            <input
-              type="password"
-              id="senha"
-              placeholder="Digite sua senha aqui"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <button type="submit">Enviar</button>
-        </form>
-      </div>
+      ) : (
+        <div id="form-login">
+          <h1>FAÇA LOGIN</h1>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <label htmlFor="nome">Nome de usuário</label>
+              <br />
+              <input
+                type="text"
+                id="nome"
+                placeholder="Digite seu nome aqui"
+                ref={user}
+              />
+            </div>
+            <div>
+              <label htmlFor="senha">Senha</label>
+              <br />
+              <input
+                type="password"
+                id="senha"
+                placeholder="Digite sua senha aqui"
+                ref={password}
+              />
+            </div>
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      )}
     </>
   );
 }
