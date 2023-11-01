@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../css/Projeto.css";
-import "../mediaQuery/Projeto-media.css"
+import "../mediaQuery/Projeto-media.css";
 import MapaGoogle from "./MapaGoogle";
 
 function Projeto() {
@@ -11,6 +11,12 @@ function Projeto() {
   const [pageHeightClass, setPageHeightClass] = useState("");
   const [riscoEnchente, setRiscoEnchente] = useState("");
   const [corBolinha, setCorBolinha] = useState("");
+  const [endereco, setEndereco] = useState({
+    rua: "",
+    bairro: "",
+    cidade: "",
+    estado: "",
+  });
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -18,18 +24,33 @@ function Projeto() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setResultado(inputValue);
     setInputValue("");
-    gerarValoresAleatorios();
-    verificarRiscoEnchente();
+    buscarCep(inputValue);
     setPageHeightClass("extended-height");
-
-    sessionStorage.setItem("resultado", resultado);
-    sessionStorage.setItem("fluxo", fluxo);
-    sessionStorage.setItem("nivel", nivel);
-    sessionStorage.setItem("riscoEnchente", riscoEnchente);
-    sessionStorage.setItem("corBolinha", corBolinha);
   };
+
+  function buscarCep(cep) {
+    fetch(`https://viacep.com.br/ws/${cep}/json/`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.erro) {
+          alert(`CEP digitado (${cep}) não foi encontrado, use outro ou tente novamente.`);
+        } else {
+          setEndereco({
+            rua: data.logradouro,
+            bairro: data.bairro,
+            cidade: data.localidade,
+            estado: data.uf,
+          });
+  
+          const enderecoString = Object.values(endereco).join(", ");
+          setResultado(enderecoString);
+          gerarValoresAleatorios();
+          verificarRiscoEnchente();
+        }
+      });
+  }
+  
 
   const gerarValoresAleatorios = () => {
     const novoFluxo = Math.floor(Math.random() * (300 - 50 + 1)) + 50;
@@ -54,7 +75,7 @@ function Projeto() {
     }
 
     setCorBolinha(novaCorBolinha);
-  };
+  }
 
   return (
     <>
@@ -66,23 +87,28 @@ function Projeto() {
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
-                placeholder="Digite o endereço aqui"
+                placeholder="Digite o CEP aqui (EX.: 01310100)"
                 value={inputValue}
                 onChange={handleInputChange}
                 style={{ display: "inline-block" }}
+                maxlength="8"
               />
-              <button type="submit" style={{ display: "inline-block" }}>Enviar</button>
+              <button type="submit" style={{ display: "inline-block" }}>
+                Enviar
+              </button>
             </form>
           </div>
           <MapaGoogle />
           <div id="resultados">
             {resultado && (
-              <>              
-                <h2>{resultado}</h2>{/* Mostraremos informações tiradas da API */}
-                <div className={`bolinha ${corBolinha}`}style={{ display: "inline-block" }}></div>
-                <p style={{ display: "inline-block" }}>{riscoEnchente}</p><br /><br />
+              <>
+                <h2>{resultado}</h2>
+                <div className={`bolinha ${corBolinha}`} style={{ display: "inline-block" }}></div>
+                <p style={{ display: "inline-block" }}>{riscoEnchente}</p>
+                <br /><br />
                 <p style={{ display: "inline-block" }}>Fluxo de água:</p>
-                <p style={{ display: "inline-block" }}>{fluxo} rpm</p><br /><br />
+                <p style={{ display: "inline-block" }}>{fluxo} rpm</p>
+                <br /><br />
                 <p style={{ display: "inline-block" }}>Nível de água:</p>
                 <p style={{ display: "inline-block" }}>{nivel}</p>
               </>
