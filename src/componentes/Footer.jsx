@@ -1,5 +1,6 @@
 import {} from "react";
 import "../scss/Footer.css";
+import "../mediaQuery/Footer-media.css";
 import logoDesktops from "../assets/logo-desktops-amarelo.png";
 
 function Footer() {
