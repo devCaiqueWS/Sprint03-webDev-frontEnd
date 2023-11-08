@@ -2,12 +2,12 @@ import {} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./css/App.css";
 import Nav from "./componentes/Nav";
-import Home from "./componentes/Home";
+import Home from "./routes/Home";
 import Footer from "./componentes/Footer";
-import Sobre from "./componentes/Sobre";
-import Projeto from "./componentes/Projeto";
-import Login from "./componentes/Login";
-import Contato from "./componentes/Contato";
+import Sobre from "./routes/Sobre";
+import Projeto from "./routes/Projeto";
+import Login from "./routes/Login";
+import Contato from "./routes/Contato";
 
 function App() {
   return (

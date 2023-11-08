@@ -1,22 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../css/Projeto.css";
 import "../mediaQuery/Projeto-media.css";
-import MapaGoogle from "./MapaGoogle";
+import MapaGoogle from "../componentes/MapaGoogle";
 
 function Projeto() {
   const [inputValue, setInputValue] = useState("");
-  const [resultado, setResultado] = useState("");
-  const [fluxo, setFluxo] = useState(null);
-  const [nivel, setNivel] = useState(null);
-  const [pageHeightClass, setPageHeightClass] = useState("");
-  const [riscoEnchente, setRiscoEnchente] = useState("");
-  const [corBolinha, setCorBolinha] = useState("");
   const [endereco, setEndereco] = useState({
     rua: "",
     bairro: "",
     cidade: "",
     estado: "",
   });
+  const [resultado, setResultado] = useState(null);
+  const [fluxo, setFluxo] = useState(null);
+  const [nivel, setNivel] = useState(null);
+  const [pageHeightClass, setPageHeightClass] = useState("");
+  const [riscoEnchente, setRiscoEnchente] = useState("");
+  const [corBolinha, setCorBolinha] = useState("");
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -24,7 +24,6 @@ function Projeto() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setInputValue("");
     buscarCep(inputValue);
     setPageHeightClass("extended-height");
   };
@@ -42,15 +41,16 @@ function Projeto() {
             cidade: data.localidade,
             estado: data.uf,
           });
-  
-          const enderecoString = Object.values(endereco).join(", ");
-          setResultado(enderecoString, cep);
           gerarValoresAleatorios();
           verificarRiscoEnchente();
+          setResultado({
+            enderecoString: Object.values(endereco).join(", "),
+            fluxo,
+            nivel,
+          });
         }
       });
   }
-  
 
   const gerarValoresAleatorios = () => {
     const novoFluxo = Math.floor(Math.random() * (300 - 50 + 1)) + 50;
@@ -77,6 +77,14 @@ function Projeto() {
     setCorBolinha(novaCorBolinha);
   }
 
+  useEffect(() => {
+    if (resultado) {
+      setPageHeightClass("extended-height");
+    } else {
+      setPageHeightClass("");
+    }
+  }, [resultado]);
+
   return (
     <>
       <div id="container-projeto" className={pageHeightClass}>
@@ -91,7 +99,7 @@ function Projeto() {
                 value={inputValue}
                 onChange={handleInputChange}
                 style={{ display: "inline-block" }}
-                maxlength="8"
+                maxLength="8"
                 minLength="8"
               />
               <button type="submit" style={{ display: "inline-block" }}>
@@ -103,7 +111,7 @@ function Projeto() {
           <div id="resultados">
             {resultado && (
               <>
-                <h2>{resultado}</h2>
+                <h2>{resultado.enderecoString}</h2>
                 <div className={`bolinha ${corBolinha}`} style={{ display: "inline-block" }}></div>
                 <p style={{ display: "inline-block" }}>{riscoEnchente}</p>
                 <br /><br />
