@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/Contato.css";
+import "../scss/Contato.css";
 import "../mediaQuery/Contato-media.css";
 import emailImage from "../assets/email.png";
 import telefoneImage from "../assets/telefone.png";

@@ -1,5 +1,5 @@
 import {} from "react";
-import "../css/Home.css";
+import "../scss/Home.css";
 import Login from "./Login";
 import "../mediaQuery/Home-media.css"
 

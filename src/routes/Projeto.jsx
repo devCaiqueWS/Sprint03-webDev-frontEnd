@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "../css/Projeto.css";
-import "../mediaQuery/Projeto-media.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Modal, Button } from "react-bootstrap";
 import MapaGoogle from "../componentes/MapaGoogle";
+import "../scss/Projeto.css";
 
 function Projeto() {
   const [inputValue, setInputValue] = useState("");
@@ -17,6 +18,7 @@ function Projeto() {
   const [pageHeightClass, setPageHeightClass] = useState("");
   const [riscoEnchente, setRiscoEnchente] = useState("");
   const [corBolinha, setCorBolinha] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -33,7 +35,7 @@ function Projeto() {
       .then((res) => res.json())
       .then((data) => {
         if (data.erro) {
-          alert(`CEP digitado (${cep}) não foi encontrado, use outro ou tente novamente.`);
+          setShowModal(true); // Exibe o modal
         } else {
           setEndereco({
             rua: data.logradouro,
@@ -125,6 +127,19 @@ function Projeto() {
           </div>
         </div>
       </div>
+      <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>CEP não encontrado</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <p>O CEP digitado não foi encontrado. Por favor, use outro ou tente novamente.</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button class="btn btn-warning" variant="secondary" onClick={() => setShowModal(false)}>
+            Fechar
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 }
