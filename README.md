@@ -17,4 +17,4 @@ Para acessar a área de administrador do site, é necessário fazer login com as
 
 
 - Site hospedado: https://alerta-enchente.netlify.app
-- Repositório GitHub:https://github.com/devCaiqueWS/Sprint03-webDev-frontEnd
+- Repositório GitHub:https://github.com/devCaiqueWS/Sprint05-webDev-frontEnd
